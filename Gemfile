@@ -20,11 +20,11 @@ gem 'figaro'
 
 group :development, :test do
   gem 'pry'
+  gem 'capybara'
 end
 
 group :test do
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
 end
