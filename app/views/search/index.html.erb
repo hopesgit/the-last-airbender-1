@@ -1,7 +1,40 @@
 <div id="characters">
   <% @characters.each do |character| %>
     <div class="character">
+
+      <%= "Name:" %>
       <%= character[:name] %>
+      <br>
+
+      <%= "Allies:" %>
+      <% if !character[:allies] %>
+        <%= "None" %>
+      <% else %>
+          <% character[:allies].each do |ally| %>
+            <%= ally %>
+          <% end %>
+      <% end %>
+      <br>
+
+      <%= "Enemies:" %>
+        <% if !character[:enemies] %>
+          <%= "None" %>
+        <% else %>
+          <% character[:enemies].each do |enemy| %>
+            <%= enemy %>
+          <% end %>
+        <% end %>
+        <br>
+
+      <%= "Photo:" %>
+      <% if character[:photoUrl] %>
+        <%= image_tag(character[:photoUrl], class:"photo") %>
+      <% end %>
+      <br>
+
+      <%= "Affiliation:" %>
+      <%= character[:affiliation] %>
+      <br>
     </div>
   <% end %>
 </div>
